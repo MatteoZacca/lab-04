@@ -35,8 +35,8 @@ public class TransferAgent extends Thread {
 			/* try to transfer */
 			try {
 				log("Transferring from "+fromAcc+" to "+toAcc+" amount "+amount+"...");
-				man.transferMoneyWithDeadlock(fromAcc,toAcc,amount);
-				// man.transferMoney(fromAcc,toAcc,amount);
+				// man.transferMoneyWithDeadlock(fromAcc,toAcc,amount); ---> causa deadlock
+				man.transferMoneyNoDeadlock(fromAcc,toAcc,amount); // ---> evita deadlock
 				log("done.");
 			} catch (InsufficientBalanceException ex){
 				log("Not enough money.");
