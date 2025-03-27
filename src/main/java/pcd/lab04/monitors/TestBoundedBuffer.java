@@ -9,6 +9,8 @@ public class TestBoundedBuffer {
 		int nProducers = 1;
 		int nConsumers = 1;
 
+		/* Ogni produttore esegue un ciclo infinito in cui produce un numero casuale e lo
+		mette nel buffer, mentre il consumatore preleva e consuma i numeri prodotti */
 		for (int i = 0; i < nProducers; i++){
 			new Producer(buffer).start();
 		}
