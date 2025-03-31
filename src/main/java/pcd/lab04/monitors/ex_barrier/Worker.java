@@ -16,7 +16,7 @@ public class Worker extends Thread {
 		try {
 			waitFor(gen.nextInt(3000));
 			log("before");
-			barrier.hitAndWaitAll();
+			barrier.hitAndWaitAll(); // Punto di sincronizzazione
 			log("after");
 		} catch (InterruptedException ex) {
 			log("Interrupted!");

@@ -12,7 +12,9 @@ public class ThreadA extends Thread {
 	public void run() {
 		try {
 			log("waiting opening.");
-			latch.await();
+			latch.await(); // si sospende, in attesa che sia aperto il cancello, e il
+			// cancello si apre quando al latch vengono segnalati il numero di eventi con
+			// cui è stato costruito
 			log("opened."); // 
 		} catch (InterruptedException ex) {
 			log("Interrupted!");
